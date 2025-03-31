@@ -1,0 +1,20 @@
+{% extends 'mix/base.html' %}
+
+{% block content %}
+    <h1>Lista de Produtos</h1>
+    <div class="row">
+        {% for produto in produtos %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{{ produto.image.url }}" class="card-img-top" alt="{{ produto.nome }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ produto.nome }}</h5>
+                        <a href="{% url 'produto_detalhe' produto.id %}" class="btn btn-primary">Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>Nenhum produto disponível.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

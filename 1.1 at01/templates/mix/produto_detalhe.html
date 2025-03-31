@@ -1,0 +1,8 @@
+{% extends 'mix/base.html' %}
+
+{% block content %}
+    <h1>{{ produto.nome }}</h1>
+    <img src="{{ produto.image.url }}" alt="{{ produto.nome }}" class="img-fluid mb-3">
+    <p>{{ produto.detalhes }}</p>
+    <a href="{% url 'home' %}" class="btn btn-secondary">Voltar</a>
+{% endblock %}
